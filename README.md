@@ -11,8 +11,8 @@ Travis CI instead.
 ## How to build this demo
 
 ```sh
-git clone --recursive https://github.com/bast/gtest-demo.git
-cd gtest-demo
+git clone --recursive https://github.com/pothitos/gtest-demo-gitlab.git
+cd gtest-demo-gitlab
 mkdir build
 cd build
 cmake ..
