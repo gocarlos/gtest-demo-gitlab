@@ -11,28 +11,13 @@ Travis CI instead.
 ## How to build this demo
 
 ```sh
-git clone --recursive https://github.com/pothitos/gtest-demo-gitlab.git
-cd gtest-demo-gitlab
-mkdir build
-cd build
+git clone --recursive https://github.com/gocarlos/gtest-demo-gitlab.git
+#!/bin/bash
+rm -rf _build
+mkdir _build
+cd _build
 cmake ..
-make -j
-./unit_tests
+cmake --build .
+ctest
+gcovr -r .. --exclude-directories=external --html -o coverage.html
 ```
-
-
-## How to report coverage to GitLab CI
-
-[Here](https://docs.gitlab.com/ee/user/project/pipelines/settings.html)
-are the general instructions. In brief:
-
- 1. Press the __cog icon__ in the upper right corner of your
-    project.
- 2. Click on __CI/CD Pipelines__.
- 3. In the __Test coverage parsing__ field, enter the
-    regular expression `^TOTAL.*\s+(\d+\%)$` indicated as an
-    example in the same page.
-
-Except from the individual page of each build, the coverage
-percentage is displayed if you click on __Pipelines__ and
-then __Builds__.
