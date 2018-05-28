@@ -19,5 +19,5 @@ cd _build
 cmake ..
 cmake --build .
 ctest
-gcovr -r .. --exclude=external --html -o coverage.html
+gcovr -r .. --exclude=../external --html -o coverage.html
 ```
